@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LTYRecommendViewController">
+            <connections>
+                <outlet property="categoryTableView" destination="Wdd-KF-8kf" id="kI4-o6-DRh"/>
+                <outlet property="userTableView" destination="nb0-1w-GC9" id="Rgf-jv-6ZK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-KF-8kf">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="ccy-xh-CId"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rUF-Xk-3Q6"/>
+                        <outlet property="delegate" destination="-1" id="b3s-XL-dPs"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nb0-1w-GC9">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="pFa-uP-aw7"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nb0-1w-GC9" secondAttribute="trailing" id="4pG-Gp-lnB"/>
+                <constraint firstItem="nb0-1w-GC9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6ym-NA-G83"/>
+                <constraint firstItem="Wdd-KF-8kf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7v5-nL-i9m"/>
+                <constraint firstItem="Wdd-KF-8kf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bs9-eY-xaC"/>
+                <constraint firstAttribute="bottom" secondItem="nb0-1w-GC9" secondAttribute="bottom" id="JIe-bV-brc"/>
+                <constraint firstItem="nb0-1w-GC9" firstAttribute="leading" secondItem="Wdd-KF-8kf" secondAttribute="trailing" id="bsf-fU-DON"/>
+                <constraint firstAttribute="bottom" secondItem="Wdd-KF-8kf" secondAttribute="bottom" id="iZw-d5-rSo"/>
+            </constraints>
+            <point key="canvasLocation" x="370" y="277"/>
+        </view>
+    </objects>
+</document>

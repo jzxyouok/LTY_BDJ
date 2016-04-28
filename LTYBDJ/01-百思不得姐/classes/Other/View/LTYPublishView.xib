@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LTYPublishView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="LTYPublishView">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="612"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i98-3p-ciM" userLabel="取消">
+                    <rect key="frame" x="79" y="542" width="289" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="289" id="og6-L2-ZMJ"/>
+                        <constraint firstAttribute="height" constant="40" id="qZV-hZ-Wba"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="shareButtonCancel"/>
+                    <state key="highlighted" backgroundImage="shareButtonCancelClick"/>
+                    <connections>
+                        <action selector="cancel" destination="-1" eventType="touchUpInside" id="SK2-GZ-xJt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="i98-3p-ciM" secondAttribute="bottom" constant="30" id="fPf-yh-SDj"/>
+                <constraint firstItem="i98-3p-ciM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vvU-bc-Bfn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31.5" y="-142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shareButtonCancel" width="289" height="40"/>
+        <image name="shareButtonCancelClick" width="289" height="40"/>
+    </resources>
+</document>
