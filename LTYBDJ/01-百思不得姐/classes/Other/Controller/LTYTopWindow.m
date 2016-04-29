@@ -18,6 +18,7 @@ static UIWindow *window_;
     window_.frame = CGRectMake(0, 0, LTYScreenW, 20);
     window_.windowLevel = UIWindowLevelAlert;
     [window_ addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(windowClick)]];
+    window_.backgroundColor = [UIColor redColor];
 }
 
 + (void)show
@@ -38,14 +39,13 @@ static UIWindow *window_;
 {
     for (UIScrollView *subview in superview.subviews) {
         
-        //        CGRectIntersectsRect([UIApplication sharedApplication].keyWindow.bounds, subview.frame)
-        
         //转换坐标系的两种方法
         //        CGRect newFrame = [subview.superview convertRect:subview.frame toView:nil];
         //        CGRect newFrame = [[UIApplication sharedApplication].keyWindow convertRect:subview.frame fromView:subview.superview];
+
         
         // 如果是scrollview, 滚动最顶部
-        if ([subview isKindOfClass:[UIScrollView class]]) {
+        if ([subview isKindOfClass:[UIScrollView class]] && subview.isShowingOnKeyWindow) {
             CGPoint offset = subview.contentOffset;
             offset.y = - subview.contentInset.top;
             [subview setContentOffset:offset animated:YES];
@@ -55,4 +55,6 @@ static UIWindow *window_;
         [self searchScrollViewInView:subview];
     }
 }
+
+
 @end

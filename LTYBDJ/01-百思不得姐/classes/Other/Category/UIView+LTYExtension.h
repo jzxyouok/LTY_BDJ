@@ -28,5 +28,6 @@
 
 /** 在分类中声明@property,只会生成方法的声明，不会生成方法的实现和带有下划线的成员变量 */
 
+- (BOOL)isShowingOnKeyWindow;
 
 @end
