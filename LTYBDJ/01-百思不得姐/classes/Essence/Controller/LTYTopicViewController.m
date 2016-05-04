@@ -24,6 +24,12 @@
 @property (nonatomic, copy) NSString *maxtime;
 /** 上一次的请求参数 */
 @property (nonatomic, strong) NSDictionary *params;
+
+/** 上一次选中的控制器index*/
+@property (nonatomic, assign) NSInteger lastSelectIndex;
+
+
+
 @end
 
 @implementation LTYTopicViewController
@@ -65,7 +71,23 @@ static NSString * const LTYTopicCellId = @"topic";
     // 注册
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LTYTopicCell class]) bundle:nil] forCellReuseIdentifier:LTYTopicCellId];
     
+    //监听tabbar点击的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarSelect) name:LTYTabBarDidSelectNotification object:nil];
     
+}
+
+- (void)tabBarSelect
+{
+    
+    //如果连续选中2次，并且选中的是当前的导航控制器,直接刷新
+    //还要判断一下要刷新的view是不是在主窗口上（有这个条件就不用再判断当前选中的控制器了 && self.tabBarController.selectedViewController == self.navigationController可不写）
+    if (self.lastSelectIndex == self.tabBarController.selectedIndex && self.view.isShowingOnKeyWindow) {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+    //记录这一次的索引
+    self.lastSelectIndex = self.tabBarController.selectedIndex;
+
 }
 
 - (void)setupRefresh

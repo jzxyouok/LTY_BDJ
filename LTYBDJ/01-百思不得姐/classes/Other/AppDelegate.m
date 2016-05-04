@@ -10,7 +10,7 @@
 #import "LTYTabBarController.h"
 #import "LTYPushGuideView.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -24,7 +24,9 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     //设置窗口的根控制器
-    self.window.rootViewController = [[LTYTabBarController alloc] init];
+    LTYTabBarController *tabBarController = [[LTYTabBarController alloc] init];
+    tabBarController.delegate = self;
+    self.window.rootViewController = tabBarController;
     
     //显示窗口
     [self.window makeKeyAndVisible];
@@ -34,6 +36,15 @@
     [LTYPushGuideView show];
     
     return YES;
+}
+
+#pragma mark - <UITabBarControllerDelegate>
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //发出一个通知(想监听就接受通知，不向监听就不接收通知)
+//    NSNotification *userInfo = @{}
+//    tabBarController.selectedViewController  tabBarController有这个功能，但这个可传可不传，因为接受通知者拿到通知后就能拿到选中的tabBarController.selectedViewController
+    [[NSNotificationCenter defaultCenter] postNotificationName:LTYTabBarDidSelectNotification object:nil userInfo:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
