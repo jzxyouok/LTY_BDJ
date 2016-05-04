@@ -282,7 +282,7 @@ static NSString * const LTYCommentId = @"comment";
 #pragma mark MenuConreollerItem处理
 - (void)ding:(UIMenuController *)menu
 {
-    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 }
 - (void)replay:(UIMenuController *)menu
 {

@@ -95,6 +95,12 @@
     UIImageView *bgView = [[UIImageView alloc] init];
     bgView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgView;
+    
+    //用图层设置圆角会很卡,所以建议用绘图做，将服务器返回的正方形图片裁剪为圆形
+//    self.profileImageView.layer.cornerRadius = self.profileImageView.width * 0.5;
+//    self.profileImageView.layer.masksToBounds = YES;
+    
+    
 }
 
 - (void)setTopics:(LTYTopic *)topics
@@ -103,7 +109,8 @@
     _topics = topics;
     
     // 设置头像
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topics.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.profileImageView setCircleHeader:topics.profile_image];
+
     
     // 设置名字
     self.nameLabel.text = topics.name;

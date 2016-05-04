@@ -23,7 +23,10 @@
 - (void)setRecommendTag:(LTYRecommendTag *)recommendTag
 {
     _recommendTag = recommendTag;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_recommendTag.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    UIImage *placeholder = [[UIImage imageNamed:@"defaultUserIcon"] circleImage];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_recommendTag.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.iconView.image = image ? [image circleImage] : placeholder;
+    }];
     self.nameLabel.text = _recommendTag.theme_name;
     
     NSString *subNumber = nil;

@@ -24,8 +24,10 @@
 - (void)setComment:(LTYComment *)comment
 {
     _comment = comment;
+    //设置头像
+    UIImage *placeholder = [[UIImage imageNamed:@"defaultUserIcon"] circleImage];
+    [self.profileImageView setCircleHeader:comment.user.profile_image];
     
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.sexView.image = [comment.user.sex isEqualToString:LTYUserSexMale] ? [UIImage imageNamed:@"Profile_manIcon"] : [UIImage imageNamed:@"Profile_womanIcon"];
     self.usernameLabel.text = comment.user.username;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%zd",comment.like_count];

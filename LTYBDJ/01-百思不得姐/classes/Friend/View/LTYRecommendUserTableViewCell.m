@@ -37,7 +37,9 @@
     _user = user;
     
     self.screenNameLabel.text = user.screen_name;
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.headerImageView setCircleHeader:user.header];
+
+    
     NSString *fansCount = nil;
     if (_user.fans_count < 10000) {
         fansCount = [NSString stringWithFormat:@"%zd人订阅",_user.fans_count ];

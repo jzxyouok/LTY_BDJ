@@ -15,6 +15,8 @@
 		8316239E1C903361000AD6FA /* LTYRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8316239D1C903361000AD6FA /* LTYRecommendCategory.m */; };
 		831623A21C903BE4000AD6FA /* LTYRecommendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831623A01C903BE4000AD6FA /* LTYRecommendCategoryCell.m */; };
 		831623A31C903BE4000AD6FA /* LTYRecommendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831623A11C903BE4000AD6FA /* LTYRecommendCategoryCell.xib */; };
+		831E36D61CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E36D51CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m */; };
+		831E36D91CDA2B62006B8A36 /* UIImageView+LTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E36D81CDA2B62006B8A36 /* UIImageView+LTYExtension.m */; };
 		8324D4721C8AA950008CEB39 /* LTYEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8324D4441C8AA950008CEB39 /* LTYEssenceViewController.m */; };
 		8324D4741C8AA950008CEB39 /* LTYFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8324D44C1C8AA950008CEB39 /* LTYFriendViewController.m */; };
 		8324D4761C8AA950008CEB39 /* LTYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8324D4541C8AA950008CEB39 /* LTYMeViewController.m */; };
@@ -99,6 +101,10 @@
 		8316239F1C903BE4000AD6FA /* LTYRecommendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYRecommendCategoryCell.h; sourceTree = "<group>"; };
 		831623A01C903BE4000AD6FA /* LTYRecommendCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYRecommendCategoryCell.m; sourceTree = "<group>"; };
 		831623A11C903BE4000AD6FA /* LTYRecommendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYRecommendCategoryCell.xib; sourceTree = "<group>"; };
+		831E36D41CDA1EF3006B8A36 /* UIImage+LTYImageExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LTYImageExtension.h"; sourceTree = "<group>"; };
+		831E36D51CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LTYImageExtension.m"; sourceTree = "<group>"; };
+		831E36D71CDA2B62006B8A36 /* UIImageView+LTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LTYExtension.h"; sourceTree = "<group>"; };
+		831E36D81CDA2B62006B8A36 /* UIImageView+LTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LTYExtension.m"; sourceTree = "<group>"; };
 		8324D4431C8AA950008CEB39 /* LTYEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYEssenceViewController.h; sourceTree = "<group>"; };
 		8324D4441C8AA950008CEB39 /* LTYEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYEssenceViewController.m; sourceTree = "<group>"; };
 		8324D44B1C8AA950008CEB39 /* LTYFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYFriendViewController.h; sourceTree = "<group>"; };
@@ -467,6 +473,10 @@
 				8324D4641C8AA950008CEB39 /* UIBarButtonItem+LTYExtension.m */,
 				8324D4651C8AA950008CEB39 /* UIView+LTYExtension.h */,
 				8324D4661C8AA950008CEB39 /* UIView+LTYExtension.m */,
+				831E36D41CDA1EF3006B8A36 /* UIImage+LTYImageExtension.h */,
+				831E36D51CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m */,
+				831E36D71CDA2B62006B8A36 /* UIImageView+LTYExtension.h */,
+				831E36D81CDA2B62006B8A36 /* UIImageView+LTYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -779,6 +789,7 @@
 				83DF44F91C95C0990079687D /* LTYVerticalButton.m in Sources */,
 				8324D47A1C8AA950008CEB39 /* UIBarButtonItem+LTYExtension.m in Sources */,
 				8324D47D1C8AA950008CEB39 /* LTYTabBarController.m in Sources */,
+				831E36D91CDA2B62006B8A36 /* UIImageView+LTYExtension.m in Sources */,
 				839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */,
 				832791AB1CADB2520021217C /* LTYCommentViewController.m in Sources */,
 				83F960061C919810008C5D3A /* LTYRecommendUser.m in Sources */,
@@ -791,6 +802,7 @@
 				8333EABD1C97E658001267D6 /* LTYTopicViewController.m in Sources */,
 				83777B561C9E8FD80077BC35 /* LTYShowPictureViewController.m in Sources */,
 				833BEC801C98FD40000574A4 /* LTYTopic.m in Sources */,
+				831E36D61CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m in Sources */,
 				833D16891CAA913F0033D93E /* LTYComment.m in Sources */,
 				834B03B11CB2CA8E0020DADE /* LTYCommentCell.m in Sources */,
 			);
