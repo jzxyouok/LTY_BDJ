@@ -50,5 +50,14 @@
     [super setFrame:frame];
 }
 
+#pragma mark - MenuComtroller处理
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return NO;
+}
 
 @end

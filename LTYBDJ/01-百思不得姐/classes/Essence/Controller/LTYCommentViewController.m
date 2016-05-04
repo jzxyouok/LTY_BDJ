@@ -245,10 +245,52 @@ static NSString * const LTYCommentId = @"comment";
     return [self commentsInSection:indexPath.section][indexPath.row];
 }
 
+
 #pragma mark - <UITableViewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    if (menu.isMenuVisible) {
+        [menu setMenuVisible:NO animated:YES];
+        return;
+    }else {
+        //被点击的cell
+        LTYCommentCell *cell = (LTYCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
+        //出现一个第一响应者
+        [cell becomeFirstResponder];
+        
+        //显示MenuComtroller
+        UIMenuItem *ding = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+        UIMenuItem *replay = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(replay:)];
+        UIMenuItem *report = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+        menu.menuItems = @[ding,replay,report];
+        CGRect rect = CGRectMake(0, cell.height*0.5, cell.width, cell.height*0.5);
+        [menu setTargetRect:rect inView:cell];
+        [menu setMenuVisible:YES animated:YES];
+    }
+    
+    
+}
+#pragma mark MenuConreollerItem处理
+- (void)ding:(UIMenuController *)menu
+{
+    
+}
+- (void)replay:(UIMenuController *)menu
+{
+    
+}
+- (void)report:(UIMenuController *)menu
+{
+    
 }
 
 #pragma mark - <UITableViewDataSource>
