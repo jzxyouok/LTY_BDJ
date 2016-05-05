@@ -6,8 +6,8 @@
 //  Copyright © 2016年 AYuan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LTYEssenceViewController.h"
 
-@interface LTYNewViewController : UIViewController
+@interface LTYNewViewController : LTYEssenceViewController
 
 @end

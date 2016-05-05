@@ -95,14 +95,13 @@
             //addTarget方法是UIControl中的
             [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
         }
-        added = YES;
-        
     }
+    added = YES;
 }
 
 - (void)buttonClick
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:LTYTabBarDidSelectNotification object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LTYTabBarDidSelectNotification  object:nil userInfo:nil];
 }
 
 @end

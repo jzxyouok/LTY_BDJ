@@ -28,8 +28,6 @@
 /** 上一次选中的控制器index*/
 @property (nonatomic, assign) NSInteger lastSelectIndex;
 
-
-
 @end
 
 @implementation LTYTopicViewController
@@ -100,6 +98,11 @@ static NSString * const LTYTopicCellId = @"topic";
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
+#pragma mark - a参数
+- (NSString *)a
+{
+    return [self.parentViewController isKindOfClass:[LTYTopicViewController class]] ? @"newlist" : @"list";
+}
 #pragma mark - 数据处理
 /**
  * 加载新的帖子数据
@@ -113,6 +116,7 @@ static NSString * const LTYTopicCellId = @"topic";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
+    params[@"a"] = self.a;
     params[@"type"] = @(self.type);
     self.params = params;
     
@@ -161,6 +165,7 @@ static NSString * const LTYTopicCellId = @"topic";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
+    params[@"a"] = self.a;
     params[@"type"] = @(self.type);
     NSInteger page = self.page + 1;
     params[@"page"] = @(page);

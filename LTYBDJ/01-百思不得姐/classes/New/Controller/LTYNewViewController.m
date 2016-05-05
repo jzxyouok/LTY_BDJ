@@ -7,6 +7,7 @@
 //
 
 #import "LTYNewViewController.h"
+#import "LTYTopicViewController.h"
 
 @interface LTYNewViewController ()
 
@@ -14,22 +15,24 @@
 
 @implementation LTYNewViewController
 
-- (void)viewDidLoad {
-    
-    //设置导航栏标题
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
-
-    //设置导航栏左边的按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(newClick)];
-    
-    //设置背景色
-    self.view.backgroundColor = LTYGlobalBg;
-}
-
-- (void)newClick
-{
-    LTYLogFunc;
-}
+//- (void)viewDidLoad {
+//    
+//    //设置导航栏标题
+//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+//
+//    //设置导航栏左边的按钮
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(newClick)];
+//    
+//    //设置背景色
+//    self.view.backgroundColor = LTYGlobalBg;
+//    
+//
+//}
+//
+//- (void)newClick
+//{
+//    LTYLogFunc;
+//}
 
 
 
