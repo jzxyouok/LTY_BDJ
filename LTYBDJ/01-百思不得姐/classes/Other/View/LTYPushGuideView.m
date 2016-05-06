@@ -34,9 +34,6 @@
     //调用synchronize马上存储
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    
-    
-
 }
 
 + (instancetype)guide

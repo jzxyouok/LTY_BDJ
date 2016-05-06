@@ -14,35 +14,6 @@
 #import "LTYTabBar.h"
 #import "LTYNavigationController.h"
 
-/**
- *
- [UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
- 颜色:
- 
- 24bit颜色: R G B
- * #ff0000
- * #ccee00
- * #000000
- * #ffffff
- 
- 32bit颜色: A R G B
- * #ff0000ff
- 
- 常见颜色:
- #ff0000 红色
- #0000ff 蓝色
- #00ff00 绿色
- #000000 黑色
- #000000 白色
- 
- 灰色的特点:RGB一样
- 
- 
- 1024*1024 像素 * 32bit / 8  -> 为这张图片占用的字节数
- 
- */
-
-
 @interface LTYTabBarController ()
 
 @end
@@ -74,7 +45,7 @@
     [self setupChildViewController:[[LTYEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     [self setupChildViewController:[[LTYNewViewController alloc] init] title:@"新帖" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     [self setupChildViewController:[[LTYFriendViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
-    [self setupChildViewController:[[LTYMeViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setupChildViewController:[[LTYMeViewController alloc] initWithStyle:UITableViewStyleGrouped] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
 //    [self.tabBar addSubview:[UIButton buttonWithType:UIButtonTypeContactAdd]];
     
