@@ -91,6 +91,8 @@
     // 计算footer的高度
     self.height = rows * buttonH;
     
+
+    
     // 重绘
     [self setNeedsDisplay];
 }- (void)buttonClick:(UIButton *)button

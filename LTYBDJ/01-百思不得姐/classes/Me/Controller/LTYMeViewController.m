@@ -40,11 +40,13 @@ static NSString *LTYMeId = @"me";
     self.tableView.sectionHeaderHeight = 0;
     
     //调整inset
-    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 825, 0);
+
 
     //设置footerView
-    self.tableView.tableFooterView = [[LTYMeFooterView alloc] init];
-//    self.tableView.tableFooterView.backgroundColor = [UIColor redColor];
+    LTYMeFooterView *footerView = [[LTYMeFooterView alloc] init];
+    self.tableView.tableFooterView = footerView;
+    
     
 }
 
@@ -77,7 +79,9 @@ static NSString *LTYMeId = @"me";
     LTYLogFunc;
 }
 
+
 #pragma mark - <UITableViewDataSource>
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
