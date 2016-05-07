@@ -17,7 +17,9 @@
 + (void)initialize
 {
     //用appearance后，以后无论是LTYNavigationController还是系统的导航栏背景图片都会被设置
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    [bar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
     
     //下面这种方法只在设定的类(LTYNavigationController)的导航栏才会生效
 //    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];

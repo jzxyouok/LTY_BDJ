@@ -9,6 +9,8 @@
 #import "LTYPublishView.h"
 #import "LTYVerticalButton.h"
 #import <POP.h>
+#import "LTYPostWordViewController.h"
+#import "LTYNavigationController.h"
 
 static CGFloat const LTYAnimationDelay = 0.08;
 static CGFloat const LTYSpringFactor = 7;
@@ -162,10 +164,15 @@ static UIWindow *window_;
 - (void)buttonClick:(UIButton *)button
 {
     [self cancelWithCompletionClock:^{
-        if (button.tag == 0) {
-            LTYLog(@"发视频");
-        } else if(button.tag == 1) {
-            LTYLog(@"发图片");
+        if (button.tag == 2) {
+            NSLog(@"发段子");
+            
+            //这里不能用self来弹出其他控制器，因为self执行了dissmiss操作
+            LTYNavigationController *navVc = [[LTYNavigationController alloc] init];
+            LTYPostWordViewController *postWordVc = [[LTYPostWordViewController alloc] init];
+            UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+            [navVc pushViewController:postWordVc animated:YES];
+            [rootVc presentViewController:navVc animated:YES completion:nil];
         }
     }];
     

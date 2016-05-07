@@ -35,6 +35,9 @@
 		832A4F3D1C93DF75002E9089 /* LTYRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A4F3C1C93DF75002E9089 /* LTYRecommendTag.m */; };
 		832A4F411C940176002E9089 /* LTYRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A4F3F1C940176002E9089 /* LTYRecommendTagCell.m */; };
 		832A4F421C940176002E9089 /* LTYRecommendTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832A4F401C940176002E9089 /* LTYRecommendTagCell.xib */; };
+		832D55591CDDD689005FB02C /* LTYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 832D55571CDDD689005FB02C /* LTYPublishView.m */; };
+		832D555A1CDDD689005FB02C /* LTYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832D55581CDDD689005FB02C /* LTYPublishView.xib */; };
+		832D555D1CDDDA80005FB02C /* LTYPostWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832D555C1CDDDA80005FB02C /* LTYPostWordViewController.m */; };
 		833289591CDAF0BC00F0ACB1 /* LTYMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833289581CDAF0BC00F0ACB1 /* LTYMeCell.m */; };
 		8332895C1CDAFECE00F0ACB1 /* LTYMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8332895B1CDAFECE00F0ACB1 /* LTYMeFooterView.m */; };
 		8332895F1CDB0BC100F0ACB1 /* LTYSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8332895E1CDB0BC100F0ACB1 /* LTYSquare.m */; };
@@ -59,8 +62,6 @@
 		83777B571C9E8FD80077BC35 /* LTYShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83777B551C9E8FD80077BC35 /* LTYShowPictureViewController.xib */; };
 		8383BFDF1CB1523F00877ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8383BFDE1CB1523F00877ECC /* Assets.xcassets */; };
 		838F3FC41CB6875D00D888D1 /* LTYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */; };
-		838F3FC81CB6877300D888D1 /* LTYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 838F3FC61CB6877300D888D1 /* LTYPublishView.m */; };
-		838F3FC91CB6877300D888D1 /* LTYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838F3FC71CB6877300D888D1 /* LTYPublishView.xib */; };
 		839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */; };
 		83DF44F51C9595900079687D /* LTYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F31C9595900079687D /* LTYLoginRegisterViewController.m */; };
 		83DF44F91C95C0990079687D /* LTYVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F81C95C0990079687D /* LTYVerticalButton.m */; };
@@ -144,6 +145,11 @@
 		832A4F3E1C940176002E9089 /* LTYRecommendTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYRecommendTagCell.h; sourceTree = "<group>"; };
 		832A4F3F1C940176002E9089 /* LTYRecommendTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYRecommendTagCell.m; sourceTree = "<group>"; };
 		832A4F401C940176002E9089 /* LTYRecommendTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYRecommendTagCell.xib; sourceTree = "<group>"; };
+		832D55561CDDD689005FB02C /* LTYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYPublishView.h; sourceTree = "<group>"; };
+		832D55571CDDD689005FB02C /* LTYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYPublishView.m; sourceTree = "<group>"; };
+		832D55581CDDD689005FB02C /* LTYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYPublishView.xib; sourceTree = "<group>"; };
+		832D555B1CDDDA80005FB02C /* LTYPostWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYPostWordViewController.h; sourceTree = "<group>"; };
+		832D555C1CDDDA80005FB02C /* LTYPostWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYPostWordViewController.m; sourceTree = "<group>"; };
 		833289571CDAF0BC00F0ACB1 /* LTYMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYMeCell.h; sourceTree = "<group>"; };
 		833289581CDAF0BC00F0ACB1 /* LTYMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYMeCell.m; sourceTree = "<group>"; };
 		8332895A1CDAFECE00F0ACB1 /* LTYMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYMeFooterView.h; sourceTree = "<group>"; };
@@ -185,9 +191,6 @@
 		8383BFDE1CB1523F00877ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		838F3FC21CB6875D00D888D1 /* LTYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYNavigationController.h; sourceTree = "<group>"; };
 		838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYNavigationController.m; sourceTree = "<group>"; };
-		838F3FC51CB6877300D888D1 /* LTYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYPublishView.h; sourceTree = "<group>"; };
-		838F3FC61CB6877300D888D1 /* LTYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYPublishView.m; sourceTree = "<group>"; };
-		838F3FC71CB6877300D888D1 /* LTYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYPublishView.xib; sourceTree = "<group>"; };
 		8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		83DF44F21C9595900079687D /* LTYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYLoginRegisterViewController.h; sourceTree = "<group>"; };
 		83DF44F31C9595900079687D /* LTYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 		8324D4401C8AA950008CEB39 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				832D55551CDDD689005FB02C /* Publish */,
 				8324D4411C8AA950008CEB39 /* Essence */,
 				8324D4471C8AA950008CEB39 /* Friend */,
 				8324D44F1C8AA950008CEB39 /* Me */,
@@ -532,9 +536,6 @@
 			children = (
 				83E28E931CBBAC2100D77F5F /* LTYTopWindow.h */,
 				83E28E941CBBAC2100D77F5F /* LTYTopWindow.m */,
-				838F3FC51CB6877300D888D1 /* LTYPublishView.h */,
-				838F3FC61CB6877300D888D1 /* LTYPublishView.m */,
-				838F3FC71CB6877300D888D1 /* LTYPublishView.xib */,
 				8324D4701C8AA950008CEB39 /* LTYTabBar.h */,
 				8324D4711C8AA950008CEB39 /* LTYTabBar.m */,
 				836956D51C9721FF00A26BF5 /* LTYPushGuideView.h */,
@@ -542,6 +543,18 @@
 				836956D81C97221000A26BF5 /* LTYPushGuideView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		832D55551CDDD689005FB02C /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				832D55561CDDD689005FB02C /* LTYPublishView.h */,
+				832D55571CDDD689005FB02C /* LTYPublishView.m */,
+				832D55581CDDD689005FB02C /* LTYPublishView.xib */,
+				832D555B1CDDDA80005FB02C /* LTYPostWordViewController.h */,
+				832D555C1CDDDA80005FB02C /* LTYPostWordViewController.m */,
+			);
+			path = Publish;
 			sourceTree = "<group>";
 		};
 		83F9444D1C8993B10098D752 = {
@@ -716,8 +729,8 @@
 				83F960031C912103008C5D3A /* LTYRecommendUserTableViewCell.xib in Resources */,
 				831623971C901FDE000AD6FA /* LTYRecommendViewController.xib in Resources */,
 				833D16831CAA25150033D93E /* LTYTopicVideoView.xib in Resources */,
+				832D555A1CDDD689005FB02C /* LTYPublishView.xib in Resources */,
 				836956D91C97221000A26BF5 /* LTYPushGuideView.xib in Resources */,
-				838F3FC91CB6877300D888D1 /* LTYPublishView.xib in Resources */,
 				834B03B21CB2CA8E0020DADE /* LTYCommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,17 +829,18 @@
 				832A4F411C940176002E9089 /* LTYRecommendTagCell.m in Sources */,
 				833289591CDAF0BC00F0ACB1 /* LTYMeCell.m in Sources */,
 				833D16811CAA25010033D93E /* LTYTopicVideoView.m in Sources */,
+				832D555D1CDDDA80005FB02C /* LTYPostWordViewController.m in Sources */,
 				8324D4781C8AA950008CEB39 /* LTYNewViewController.m in Sources */,
 				83777B521C9E842A0077BC35 /* LTYProgressView.m in Sources */,
 				8332895F1CDB0BC100F0ACB1 /* LTYSquare.m in Sources */,
 				83DF44F91C95C0990079687D /* LTYVerticalButton.m in Sources */,
 				8324D47A1C8AA950008CEB39 /* UIBarButtonItem+LTYExtension.m in Sources */,
 				8324D47D1C8AA950008CEB39 /* LTYTabBarController.m in Sources */,
+				832D55591CDDD689005FB02C /* LTYPublishView.m in Sources */,
 				831E36D91CDA2B62006B8A36 /* UIImageView+LTYExtension.m in Sources */,
 				839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */,
 				832791AB1CADB2520021217C /* LTYCommentViewController.m in Sources */,
 				83F960061C919810008C5D3A /* LTYRecommendUser.m in Sources */,
-				838F3FC81CB6877300D888D1 /* LTYPublishView.m in Sources */,
 				8324D4741C8AA950008CEB39 /* LTYFriendViewController.m in Sources */,
 				8324D47B1C8AA950008CEB39 /* UIView+LTYExtension.m in Sources */,
 				83F960021C912103008C5D3A /* LTYRecommendUserTableViewCell.m in Sources */,
