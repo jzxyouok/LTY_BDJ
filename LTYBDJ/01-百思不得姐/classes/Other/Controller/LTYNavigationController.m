@@ -21,6 +21,19 @@
     [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
     [bar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
     
+    //设置item
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    //UIControlStateNormal
+    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionary];
+    itemAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:17];
+    itemAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
+    //UIControlStateDisabled
+    NSMutableDictionary *itemDisableAttrs = [NSMutableDictionary dictionary];
+    itemDisableAttrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    itemDisableAttrs[NSFontAttributeName] = itemAttrs[NSFontAttributeName];
+    [item setTitleTextAttributes:itemDisableAttrs forState:UIControlStateDisabled];
+    
     //下面这种方法只在设定的类(LTYNavigationController)的导航栏才会生效
 //    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
 //    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
