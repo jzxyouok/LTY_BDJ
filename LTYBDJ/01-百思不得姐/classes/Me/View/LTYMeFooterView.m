@@ -11,6 +11,7 @@
 #import "LTYSquare.h"
 #import <MJExtension.h>
 #import "LTYSquareButton.h"
+#import "LTYWebViewController.h"
 
 @implementation LTYMeFooterView
 
@@ -95,9 +96,20 @@
     
     // 重绘
     [self setNeedsDisplay];
-}- (void)buttonClick:(UIButton *)button
+}
+
+- (void)buttonClick:(LTYSquareButton *)button
 {
-    LTYLogFunc;
+    if (![button.square.url hasPrefix:@"http"]) return;
+    
+    LTYWebViewController *webVc = [[LTYWebViewController alloc] init];
+    webVc.title = button.square.name;
+    webVc.url = button.square.url;
+    //取出当前导航控制器
+     UITabBarController *tabVc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *navVc = tabVc.selectedViewController;
+    [navVc pushViewController:webVc animated:YES];
+    
 }
 
 /**

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F40068F546315DB51B7C667 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14733CC96063C343B6CE884B /* libPods.a */; };
+		8304326B1CDC96C200A85E57 /* LTYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304326A1CDC96C200A85E57 /* LTYWebViewController.m */; };
+		8304326F1CDCFBE200A85E57 /* LTYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */; };
 		8310C3E31CBDF0950015E5BA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8310C3E21CBDF0950015E5BA /* Foundation+Log.m */; };
 		8312FB291CCC934700EC61CE /* NSDate+LTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8312FB281CCC934700EC61CE /* NSDate+LTYExtension.m */; };
 		831623961C901FDE000AD6FA /* LTYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831623941C901FDE000AD6FA /* LTYRecommendViewController.m */; };
@@ -94,6 +96,9 @@
 /* Begin PBXFileReference section */
 		14733CC96063C343B6CE884B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1605AC3383135EEAC714FEA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		830432691CDC96C200A85E57 /* LTYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYWebViewController.h; sourceTree = "<group>"; };
+		8304326A1CDC96C200A85E57 /* LTYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYWebViewController.m; sourceTree = "<group>"; };
+		8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYWebViewController.xib; sourceTree = "<group>"; };
 		8310C3E21CBDF0950015E5BA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		8312FB271CCC934700EC61CE /* NSDate+LTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LTYExtension.h"; sourceTree = "<group>"; };
 		8312FB281CCC934700EC61CE /* NSDate+LTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LTYExtension.m"; sourceTree = "<group>"; };
@@ -406,6 +411,9 @@
 			children = (
 				8324D4531C8AA950008CEB39 /* LTYMeViewController.h */,
 				8324D4541C8AA950008CEB39 /* LTYMeViewController.m */,
+				830432691CDC96C200A85E57 /* LTYWebViewController.h */,
+				8304326A1CDC96C200A85E57 /* LTYWebViewController.m */,
+				8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -701,6 +709,7 @@
 				83F4B8FD1C9D86F300774DD6 /* LTYLoginRegisterViewController.xib in Resources */,
 				83F4B9061C9D99AE00774DD6 /* LTYTopicPictureView.xib in Resources */,
 				83777B571C9E8FD80077BC35 /* LTYShowPictureViewController.xib in Resources */,
+				8304326F1CDCFBE200A85E57 /* LTYWebViewController.xib in Resources */,
 				831623A31C903BE4000AD6FA /* LTYRecommendCategoryCell.xib in Resources */,
 				832A4F421C940176002E9089 /* LTYRecommendTagCell.xib in Resources */,
 				83F4B9011C9D889A00774DD6 /* LTYTopicCell.xib in Resources */,
@@ -821,6 +830,7 @@
 				8324D4741C8AA950008CEB39 /* LTYFriendViewController.m in Sources */,
 				8324D47B1C8AA950008CEB39 /* UIView+LTYExtension.m in Sources */,
 				83F960021C912103008C5D3A /* LTYRecommendUserTableViewCell.m in Sources */,
+				8304326B1CDC96C200A85E57 /* LTYWebViewController.m in Sources */,
 				836956D71C9721FF00A26BF5 /* LTYPushGuideView.m in Sources */,
 				8312FB291CCC934700EC61CE /* NSDate+LTYExtension.m in Sources */,
 				8333EABD1C97E658001267D6 /* LTYTopicViewController.m in Sources */,
