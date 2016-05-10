@@ -14,8 +14,9 @@
 #import "LTYTopicVideoView.h"
 #import "LTYComment.h"
 #import "LTYUser.h"
+#import "LTYLoginTool.h"
 
-@interface LTYTopicCell()
+@interface LTYTopicCell()<UIActionSheetDelegate>
 
 /**  头像*/
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -222,8 +223,25 @@
     
 }
 
+#pragma mark - <UIActionSheetDelegate>
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 2) return;
+    
+    if ([LTYLoginTool getUid] == nil) {
+        //取决自己情况 可以在actionSheet完全消失(didDismissWithButtonIndex)的时候弹出登录控制器
+    }
+    
+    
+    //开始执行举报\收藏操作
+    
+}
 
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+}
 
 
 @end

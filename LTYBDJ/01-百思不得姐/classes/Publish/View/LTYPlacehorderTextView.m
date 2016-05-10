@@ -66,6 +66,7 @@
     self.placeholderLabel.hidden = self.hasText;
 }
 
+//这也是一种方法，把占位文字画上去，不过笔者推荐使用UILabel做占位文字
 /*
  * 绘制占位文字(每次调用drawRect方法之前,系统都会自动把以前画的东西擦掉)
  */

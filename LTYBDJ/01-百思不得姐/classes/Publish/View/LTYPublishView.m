@@ -11,6 +11,7 @@
 #import <POP.h>
 #import "LTYPostWordViewController.h"
 #import "LTYNavigationController.h"
+#import "LTYLoginTool.h"
 
 static CGFloat const LTYAnimationDelay = 0.08;
 static CGFloat const LTYSpringFactor = 7;
@@ -165,7 +166,12 @@ static UIWindow *window_;
 {
     [self cancelWithCompletionClock:^{
         if (button.tag == 2) {
+            
+            //判断是否登录
+            if ([LTYLoginTool getUid:YES] == nil) return;
             NSLog(@"发段子");
+            
+            
             
             //这里不能用self来弹出其他控制器，因为self执行了dissmiss操作
             LTYNavigationController *navVc = [[LTYNavigationController alloc] init];

@@ -49,7 +49,6 @@
     //    下面这句不起作用，因为导航控制器与view不在一个层级上，可以拿到导航控制器的view强制刷新
     //    [self.view layoutIfNeeded];
     
-
     
 }
 

@@ -11,6 +11,7 @@
 		8304326B1CDC96C200A85E57 /* LTYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304326A1CDC96C200A85E57 /* LTYWebViewController.m */; };
 		8304326F1CDCFBE200A85E57 /* LTYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */; };
 		8310C3E31CBDF0950015E5BA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8310C3E21CBDF0950015E5BA /* Foundation+Log.m */; };
+		8312F7621CE2568B00BDD117 /* LTYLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8312F7611CE2568B00BDD117 /* LTYLoginTool.m */; };
 		8312FB291CCC934700EC61CE /* NSDate+LTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8312FB281CCC934700EC61CE /* NSDate+LTYExtension.m */; };
 		831623961C901FDE000AD6FA /* LTYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831623941C901FDE000AD6FA /* LTYRecommendViewController.m */; };
 		831623971C901FDE000AD6FA /* LTYRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831623951C901FDE000AD6FA /* LTYRecommendViewController.xib */; };
@@ -102,6 +103,8 @@
 		8304326A1CDC96C200A85E57 /* LTYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYWebViewController.m; sourceTree = "<group>"; };
 		8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYWebViewController.xib; sourceTree = "<group>"; };
 		8310C3E21CBDF0950015E5BA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		8312F7601CE2568B00BDD117 /* LTYLoginTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYLoginTool.h; sourceTree = "<group>"; };
+		8312F7611CE2568B00BDD117 /* LTYLoginTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYLoginTool.m; sourceTree = "<group>"; };
 		8312FB271CCC934700EC61CE /* NSDate+LTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LTYExtension.h"; sourceTree = "<group>"; };
 		8312FB281CCC934700EC61CE /* NSDate+LTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LTYExtension.m"; sourceTree = "<group>"; };
 		831623931C901FDE000AD6FA /* LTYRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYRecommendViewController.h; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 				831E36D51CDA1EF3006B8A36 /* UIImage+LTYImageExtension.m */,
 				831E36D71CDA2B62006B8A36 /* UIImageView+LTYExtension.h */,
 				831E36D81CDA2B62006B8A36 /* UIImageView+LTYExtension.m */,
+				8312F7601CE2568B00BDD117 /* LTYLoginTool.h */,
+				8312F7611CE2568B00BDD117 /* LTYLoginTool.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -876,6 +881,7 @@
 				83F960021C912103008C5D3A /* LTYRecommendUserTableViewCell.m in Sources */,
 				8304326B1CDC96C200A85E57 /* LTYWebViewController.m in Sources */,
 				836956D71C9721FF00A26BF5 /* LTYPushGuideView.m in Sources */,
+				8312F7621CE2568B00BDD117 /* LTYLoginTool.m in Sources */,
 				8312FB291CCC934700EC61CE /* NSDate+LTYExtension.m in Sources */,
 				8333EABD1C97E658001267D6 /* LTYTopicViewController.m in Sources */,
 				83777B561C9E8FD80077BC35 /* LTYShowPictureViewController.m in Sources */,
