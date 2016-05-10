@@ -17,6 +17,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        
+        //垂直方向上永远有弹簧效果
+        self.alwaysBounceVertical = YES;
+        
         self.font = [UIFont systemFontOfSize:15];
         //设置通知的话，内部接受通知与外部接受通知互不影响
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:nil];
@@ -51,6 +55,43 @@
     attrs[NSFontAttributeName] = self.font;
     attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
     [self.placeholder drawInRect:CGRectMake(rect.origin.x, rect.origin.y, self.width, self.height) withAttributes:attrs];
+}
+
+#pragma mark - 重写setter
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    _placeholder = [placeholder copy];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = placeholderColor;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    
+    [self setNeedsDisplay];
 }
 
 
