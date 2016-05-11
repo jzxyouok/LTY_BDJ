@@ -43,6 +43,11 @@
 {
     [super viewDidLoad];
     
+    //如果滑动移除控制器的功能失效，清空代理(让导航控制器重新设置这个功能)
+    //如果不是用系统的导航栏左边的item，则滑动移除控制器的功能失效
+    self.interactivePopGestureRecognizer.delegate = nil;
+    
+    
     
 }
 

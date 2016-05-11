@@ -53,8 +53,6 @@ static UIWindow *window_;
 
 - (void)awakeFromNib {
 
-
-
     //先让控制器view不能点击(父控件不能点击，子控件就不能点击了)
 //    LTYRootView.userInteractionEnabled = NO;
     self.userInteractionEnabled = NO;

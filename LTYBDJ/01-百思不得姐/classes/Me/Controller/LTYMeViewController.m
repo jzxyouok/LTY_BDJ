@@ -9,6 +9,7 @@
 #import "LTYMeViewController.h"
 #import "LTYMeCell.h"
 #import "LTYMeFooterView.h"
+#import "LTYSettingViewController.h"
 
 @interface LTYMeViewController ()
 
@@ -76,7 +77,7 @@ static NSString *LTYMeId = @"me";
 
 - (void)settingClick
 {
-    LTYLogFunc;
+    [self.navigationController pushViewController:[[LTYSettingViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
 }
 
 

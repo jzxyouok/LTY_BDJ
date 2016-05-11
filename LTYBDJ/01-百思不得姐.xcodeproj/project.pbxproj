@@ -65,6 +65,7 @@
 		8383BFDF1CB1523F00877ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8383BFDE1CB1523F00877ECC /* Assets.xcassets */; };
 		838F3FC41CB6875D00D888D1 /* LTYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */; };
 		839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */; };
+		83C6039C1CE38DF400EAA38F /* LTYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6039B1CE38DF400EAA38F /* LTYSettingViewController.m */; };
 		83DF44F51C9595900079687D /* LTYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F31C9595900079687D /* LTYLoginRegisterViewController.m */; };
 		83DF44F91C95C0990079687D /* LTYVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F81C95C0990079687D /* LTYVerticalButton.m */; };
 		83E28E951CBBAC2100D77F5F /* LTYTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E28E941CBBAC2100D77F5F /* LTYTopWindow.m */; };
@@ -198,6 +199,8 @@
 		838F3FC21CB6875D00D888D1 /* LTYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYNavigationController.h; sourceTree = "<group>"; };
 		838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYNavigationController.m; sourceTree = "<group>"; };
 		8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		83C6039A1CE38DF400EAA38F /* LTYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYSettingViewController.h; sourceTree = "<group>"; };
+		83C6039B1CE38DF400EAA38F /* LTYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYSettingViewController.m; sourceTree = "<group>"; };
 		83DF44F21C9595900079687D /* LTYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYLoginRegisterViewController.h; sourceTree = "<group>"; };
 		83DF44F31C9595900079687D /* LTYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYLoginRegisterViewController.m; sourceTree = "<group>"; };
 		83DF44F71C95C0990079687D /* LTYVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYVerticalButton.h; sourceTree = "<group>"; };
@@ -424,6 +427,8 @@
 				830432691CDC96C200A85E57 /* LTYWebViewController.h */,
 				8304326A1CDC96C200A85E57 /* LTYWebViewController.m */,
 				8304326E1CDCFBE200A85E57 /* LTYWebViewController.xib */,
+				83C6039A1CE38DF400EAA38F /* LTYSettingViewController.h */,
+				83C6039B1CE38DF400EAA38F /* LTYSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				8332895C1CDAFECE00F0ACB1 /* LTYMeFooterView.m in Sources */,
 				83F4B9041C9D999D00774DD6 /* LTYTopicPictureView.m in Sources */,
 				8324D47F1C8AA950008CEB39 /* LTYTabBar.m in Sources */,
+				83C6039C1CE38DF400EAA38F /* LTYSettingViewController.m in Sources */,
 				834E49CA1CA9928D00EFBB05 /* LTYTopicVoiceView.m in Sources */,
 				83DF44F51C9595900079687D /* LTYLoginRegisterViewController.m in Sources */,
 				831623A21C903BE4000AD6FA /* LTYRecommendCategoryCell.m in Sources */,
