@@ -16,10 +16,10 @@ nbsp;nbsp;
 - 开发工具：Xcode7 Charles
 - 完成功能
    - 精华控制器中帖子的显示，包括，声音，视频，段子，图片
-   - 自定义MenuView TabBar Button Cell 以及一些工具类 都在项目中封装好了 拿到我的接口就可以直接用
-   - ‘关注’NavigationController中点击navigationItem的leftBarButtonItem会进入推荐控制器
+   - 自定义MenuView TabBar Button Cell TextView以及一些工具类 都在项目中封装好了 拿到我的接口就可以直接用
+   - '关注'NavigationController中点击navigationItem的leftBarButtonItem会进入推荐控制器
    - '推荐'控制器是采用两个tableview放在同一个controller中做的抽屉模型  
-   - ‘我’模块中是加载webview
+   - '我'模块中是加载webview
    - 发布、登录、注册、的动画
    - 图片下载进度
 
