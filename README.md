@@ -1,7 +1,8 @@
 # LTY_BDJ
 
-![image](https://github.com/AAYuan/LTY_BDJ/blob/master/readme/all.gif)
-![image](https://github.com/AAYuan/LTY_BDJ/blob/master/readme/comment.gif)
-![image](https://github.com/AAYuan/LTY_BDJ/blob/master/readme/publish.gif)
-![image](https://github.com/AAYuan/LTY_BDJ/blob/master/readme/login.gif)
-![image](https://github.com/AAYuan/LTY_BDJ/blob/master/readme/me.gif)
+
+<imag src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/all.gif" width="200" height="360" />
+<imag src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/comment.gif" width="200" height="360" />
+<imag src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/publish.gif" width="200" height="360" />
+<imag src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/login.gif" width="200" height="360" />
+<imag src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/me.gif" width="200" height="360" />
