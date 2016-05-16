@@ -8,6 +8,7 @@
 <img src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/login.gif" width="375" height="667" />
 <p></p>
 <img src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/me.gif" width="375" height="667" />
+<img src="https://github.com/AAYuan/LTY_BDJ/blob/master/readme/recommand.gif" width="375" height="667" />
 
 ##说明
 
