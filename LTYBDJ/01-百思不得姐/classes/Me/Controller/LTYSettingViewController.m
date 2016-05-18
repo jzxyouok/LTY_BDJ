@@ -7,7 +7,12 @@
 //
 
 #import "LTYSettingViewController.h"
-#import <SDImageCache.h>
+#import "SDImageCache.h"
+
+
+@interface LTYSettingViewController()<UIActionSheetDelegate>
+
+@end
 
 @implementation LTYSettingViewController
 
@@ -15,67 +20,18 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = LTYGlobalBg;
     self.title = @"设置";
-    //图片缓存
-    [self getSize];
-    
-    
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
     
 }
 
-- (void)getSize2
-{
-    //图片缓存
-    NSUInteger size = [SDImageCache sharedImageCache].getSize;
-    //    LTYLog(@"%zd %@",size,NSTemporaryDirectory());
-    
-    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *cachePath = [caches stringByAppendingPathComponent:@"default/com.hackemist.SDWebImageCache.default"];
-    
-    //获得文件夹内部的所有内容(这种方法不能获取子文件夹)
-//    NSArray *contens = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:cachePath error:nil];
-    NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:cachePath];
-    LTYLog(@"%@",subpaths);
 
-}
-
-- (void)getSize
-{
-    //因为获取缓存是一个个遍历很耗时的，所以在获取缓存的时候放在子线程中进行，获取完毕之后回到主线程刷新UI
-    //因为这里比较简单就没有放在子线程中
-
-    NSUInteger size = [SDImageCache sharedImageCache].getSize;
-    //    LTYLog(@"%zd %@",size,NSTemporaryDirectory());
-    
-    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *cachePath = [caches stringByAppendingPathComponent:@"default/com.hackemist.SDWebImageCache.default"];
-    
-    NSDirectoryEnumerator *fileEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:cachePath];
-    NSInteger totalSize = 0;
-    for (NSString *fileName in fileEnumerator) {
-        NSString *filePath = [cachePath stringByAppendingPathComponent:fileName];
-        
-//        BOOL dir = NO;
-//        判断文件的类型 ： 文件/文件夹
-//        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&dir];
-//        if(dir) continue;
-        
-        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-        if ([attrs[NSFileType] isEqualToString:NSFileTypeDirectory]) continue;
-        totalSize += [attrs[NSFileSize] integerValue];
-//        NSInteger size = [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil][NSFileSize] integerValue];
-//        totalSize += size;
-    }
-    LTYLog(@"%zd",totalSize);
-    
-
-}
-
-#pragma mark - Table view data source
+#pragma mark - <UITableviewDataSource>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,20 +40,72 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
     }
-    CGFloat size = [SDImageCache sharedImageCache].getSize / 1000.0 /1000 ;//mac中是按照1000来算的
-    cell.textLabel.text = [NSString stringWithFormat:@"清除缓存(已使用%.1fMB)",size];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.row == 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"当前版本:1.01"];
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }else if (indexPath.row == 1) {
+        CGFloat size = [SDImageCache sharedImageCache].getSize / 1000.0 /1000 ;//mac中是按照1000来算的
+        cell.textLabel.text = [NSString stringWithFormat:@"清除缓存(已使用%.1fMB)",size];
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }else if (indexPath.row == 2) {
+        
+        cell.textLabel.text = @"用户协议";
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
     
     return cell;
 }
 
+#pragma mark - <UITableviewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //自己手动来清除缓存
-//    [[NSFileManager defaultManager] removeItemAtPath:<#(nonnull NSString *)#> error:<#(NSError * _Nullable __autoreleasing * _Nullable)#>]
-    
-    [[SDImageCache sharedImageCache] cleanDisk];
+    if (indexPath.row == 1) {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"确定", nil];
+        sheet.delegate = self;
+        [sheet showInView:[UIApplication sharedApplication].keyWindow];
+    }else if(indexPath.row == 2) {
+      
 
+        
+    }
 }
+
+#pragma mark - <UIActionSheetDelegate>
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) { //点击确定后做的事情
+        
+        NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *cachePath = [caches stringByAppendingPathComponent:@"default/com.hackemist.SDWebImageCache.default"];
+        
+        [self clearCache:cachePath];
+        
+        NSUInteger size2 = [SDImageCache sharedImageCache].getSize;
+        
+        [self.tableView reloadData];
+        
+    }
+    
+}
+
+- (void)clearCache:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles=[fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            //如有需要，加入条件，过滤掉不想删除的文件
+            NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+            [fileManager removeItemAtPath:absolutePath error:nil];
+        }
+    }
+    [[SDImageCache sharedImageCache] cleanDisk];
+}
+
+
 
 @end
