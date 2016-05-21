@@ -33,8 +33,8 @@
     
     UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
     UINavigationController *preVc = (UINavigationController *)rootVc.presentedViewController;
-    [preVc presentModalViewController:addTargetVC animated:YES];
+    [preVc pushViewController:addTargetVC animated:YES];
     
-   }
+}
 
 @end

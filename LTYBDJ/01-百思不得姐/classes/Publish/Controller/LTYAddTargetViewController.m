@@ -10,28 +10,114 @@
 
 @interface LTYAddTargetViewController ()
 
+/** 内容*/
+@property (nonatomic, weak) UIView *contentView;
+/** 标签按钮*/
+@property (nonatomic, weak) UIButton *targetBtn;
+/** 文本输入框*/
+@property (nonatomic, weak) UITextField *textField;
+
+
 @end
 
 @implementation LTYAddTargetViewController
 
+- (UIButton *)targetBtn
+{
+    if (_targetBtn == nil) {
+        
+        UIButton *targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        targetBtn.width = self.contentView.width;
+        targetBtn.height = 35;
+        [targetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [targetBtn addTarget:self action:@selector(targetBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        targetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        targetBtn.contentEdgeInsets = UIEdgeInsetsMake(0, LTYTopicCellMargin, 0, LTYTopicCellMargin);
+        // 让按钮内部的文字和图片都左对齐
+        targetBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        targetBtn.backgroundColor = LTYRGBColor(74, 139, 209);
+        [self.contentView addSubview:targetBtn];
+        _targetBtn = targetBtn;
+        
+    }
+    
+    return _targetBtn;
+}
+
+- (void)targetBtnClick
+{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setupNav];
+    
+    [self setupContentView];
+    
+    [self setupTextFiled];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupTextFiled
+{
+    UITextField *textField = [[UITextField alloc] init];
+    textField.width = LTYScreenW;
+    textField.height = 25;
+    textField.placeholder = @"多个标签用逗号或者换行隔开";
+    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
+    [textField becomeFirstResponder];
+    [self.contentView addSubview:textField];
+    self.textField = textField;
+    
+    
 }
 
-/*
-#pragma mark - Navigation
+- (void)textDidChange
+{
+    if (self.textField.hasText) { // 有文字
+        // 显示"添加标签"的按钮
+        self.targetBtn.hidden = NO;
+        self.targetBtn.y = CGRectGetMaxY(self.textField.frame) + LTYTopicCellMargin;
+        [self.targetBtn setTitle:[NSString stringWithFormat:@"添加标签: %@", self.textField.text] forState:UIControlStateNormal];
+    } else { // 没有文字
+        // 隐藏"添加标签"的按钮
+        self.targetBtn.hidden = YES;
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+- (void)setupContentView
+{
+    UIView *contentView = [[UIView alloc] init];
+    contentView.x = LTYTopicCellMargin;
+    contentView.y = 64 + LTYTopicCellMargin;
+    contentView.width = LTYScreenW - 2 * LTYTopicCellMargin;
+    contentView.height = LTYScreenW;
+    [self.view addSubview:contentView];
+    self.contentView = contentView;
+    
+}
+
+- (void)setupNav
+{
+    self.title = @"标签";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成 " style:UIBarButtonItemStyleDone target:self action:@selector(done)];
+                                        
+}
+
+- (void)done
+{
+    
+}
+
+
+
+
+
+
+
 
 @end
