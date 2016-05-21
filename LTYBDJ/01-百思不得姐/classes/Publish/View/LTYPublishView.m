@@ -166,10 +166,9 @@ static UIWindow *window_;
         if (button.tag == 2) {
             
             //判断是否登录
-            if ([LTYLoginTool getUid:YES] == nil) return;
+//            if ([LTYLoginTool getUid:YES] == nil) return;
+            
             NSLog(@"发段子");
-            
-            
             
             //这里不能用self来弹出其他控制器，因为self执行了dissmiss操作
             LTYNavigationController *navVc = [[LTYNavigationController alloc] init];
