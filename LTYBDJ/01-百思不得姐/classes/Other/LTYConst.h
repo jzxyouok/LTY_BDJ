@@ -33,8 +33,6 @@ UIKIT_EXTERN NSString * const LTYUserSexMale;
 /** 精华-cell-最热评论标题的高度 */
 UIKIT_EXTERN CGFloat const LTYTopicCellTopCmtTitleH;
 
-
-
 /** 精华-cell-最热评论标题的高度 */
 UIKIT_EXTERN CGFloat const LTYTopicCellTopCmtTitleH;
 
@@ -44,5 +42,11 @@ UIKIT_EXTERN NSString * const LTYTabBarDidSelectNotification;
 UIKIT_EXTERN NSString * const LTYUserSelectControllerKey;
 /** tabBar被选中的通知 - 被点击的控制器的key*/
 UIKIT_EXTERN NSString * const LTYUserSelectController;
+
+/** 标签-间距 */
+UIKIT_EXTERN CGFloat const LTYTargetMargin;
+
+
+
 
 

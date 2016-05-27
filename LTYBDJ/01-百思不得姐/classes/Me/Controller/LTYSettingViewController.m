@@ -69,7 +69,6 @@
         [sheet showInView:[UIApplication sharedApplication].keyWindow];
     }else if(indexPath.row == 2) {
       
-
         
     }
 }

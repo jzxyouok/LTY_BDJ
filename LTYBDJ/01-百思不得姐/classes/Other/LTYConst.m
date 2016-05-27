@@ -32,3 +32,6 @@ NSString * const LTYTabBarDidSelectNotification = @"LTYTabBarDidSelectNotificati
 NSString * const LTYUserSelectControllerKey = @"LTYTabBarDidSelectNotification";
 /** tabBar被选中的通知 - 被点击的控制器的key*/
 NSString * const LTYUserSelectController = @"LTYTabBarDidSelectNotification";
+
+/** 标签-间距 */
+CGFloat const LTYTargetMargin = 5;

@@ -111,6 +111,7 @@ static NSString * const LTYUserId = @"user";
     [self.categoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LTYRecommendCategoryCell class]) bundle:nil] forCellReuseIdentifier:LTYCategoryId];
     [self.userTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LTYRecommendUserTableViewCell class]) bundle:nil] forCellReuseIdentifier:LTYUserId];
     
+    
     //设置inset
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.categoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);

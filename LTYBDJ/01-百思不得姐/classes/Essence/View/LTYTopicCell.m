@@ -101,18 +101,15 @@
 //    self.profileImageView.layer.cornerRadius = self.profileImageView.width * 0.5;
 //    self.profileImageView.layer.masksToBounds = YES;
     
-    
 }
 
 - (void)setTopics:(LTYTopic *)topics
 {
-   
     _topics = topics;
     
     // 设置头像
     [self.profileImageView setCircleHeader:topics.profile_image];
 
-    
     // 设置名字
     self.nameLabel.text = topics.name;
     
@@ -160,6 +157,7 @@
     if (cmt) {
         self.topCmtView.hidden = NO;
         self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@:%@",cmt.user.username,cmt.content];
+        
     } else {
         self.topCmtView.hidden = YES;
         

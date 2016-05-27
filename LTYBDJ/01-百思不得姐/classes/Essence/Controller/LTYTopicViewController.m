@@ -49,7 +49,6 @@
     
     // 添加刷新控件
     [self setupRefresh];
-    
 }
 
 static NSString * const LTYTopicCellId = @"topic";
@@ -64,8 +63,7 @@ static NSString * const LTYTopicCellId = @"topic";
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
-    
-    
+
     // 注册
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LTYTopicCell class]) bundle:nil] forCellReuseIdentifier:LTYTopicCellId];
     
@@ -199,6 +197,7 @@ static NSString * const LTYTopicCellId = @"topic";
         // 结束刷新
         [self.tableView.mj_footer endRefreshing];
     }];
+    
 }
 
 #pragma mark - Table view data source
@@ -208,6 +207,7 @@ static NSString * const LTYTopicCellId = @"topic";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     LTYTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:LTYTopicCellId];
     
     cell.topics = self.topics[indexPath.row];
@@ -221,7 +221,6 @@ static NSString * const LTYTopicCellId = @"topic";
 {
     // 取出帖子模型
     LTYTopic *topic = self.topics[indexPath.row];
-    
     
     return topic.cellHeight;
 }

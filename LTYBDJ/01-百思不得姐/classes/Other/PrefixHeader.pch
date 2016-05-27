@@ -27,6 +27,7 @@
 
 #define LTYRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define LTYGlobalBg LTYRGBColor(223, 223, 223)
+#define LTYTabBg LTYRGBColor(74, 139, 209)
 
 #define LTYScreenH [UIScreen mainScreen].bounds.size.height
 #define LTYScreenW [UIScreen mainScreen].bounds.size.width
