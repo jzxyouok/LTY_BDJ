@@ -110,9 +110,23 @@
     
     
     //更新textField的frame
-    self.textField.x = 0;
-    self.textField.y = CGRectGetMaxY([[self.tagArray lastObject] frame]) + LTYTargetMargin;
+    UIButton *lastButton = [self.tagArray lastObject];
+    CGFloat leftWidth = CGRectGetMaxX(lastButton.frame) + LTYTargetMargin;
+    if (self.contentView.width - leftWidth >= [self textFieldTextWidth]) {
+        self.textField.x = leftWidth;
+        self.textField.y = lastButton.y;
+    } else {
+        self.textField.x = 0;
+        self.textField.y = CGRectGetMaxY(lastButton.frame) + LTYTargetMargin;
+    }
+
+}
+
+- (CGFloat)textFieldTextWidth
+{
+    CGFloat testFieldWidth = [self.textField.text sizeWithAttributes:@{NSFontAttributeName : self.textField.font}].width;
     
+    return MAX(100, testFieldWidth);
 }
 
 /*
