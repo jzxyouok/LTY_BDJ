@@ -65,6 +65,7 @@
 		83777B521C9E842A0077BC35 /* LTYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83777B511C9E842A0077BC35 /* LTYProgressView.m */; };
 		83777B561C9E8FD80077BC35 /* LTYShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83777B541C9E8FD80077BC35 /* LTYShowPictureViewController.m */; };
 		83777B571C9E8FD80077BC35 /* LTYShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83777B551C9E8FD80077BC35 /* LTYShowPictureViewController.xib */; };
+		837B53AC1CF9F42F00198E15 /* LTYTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B53AB1CF9F42F00198E15 /* LTYTagButton.m */; };
 		8383BFDF1CB1523F00877ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8383BFDE1CB1523F00877ECC /* Assets.xcassets */; };
 		838F3FC41CB6875D00D888D1 /* LTYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */; };
 		839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */; };
@@ -203,6 +204,8 @@
 		83777B531C9E8FD80077BC35 /* LTYShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYShowPictureViewController.h; sourceTree = "<group>"; };
 		83777B541C9E8FD80077BC35 /* LTYShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYShowPictureViewController.m; sourceTree = "<group>"; };
 		83777B551C9E8FD80077BC35 /* LTYShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTYShowPictureViewController.xib; sourceTree = "<group>"; };
+		837B53AA1CF9F42F00198E15 /* LTYTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYTagButton.h; sourceTree = "<group>"; };
+		837B53AB1CF9F42F00198E15 /* LTYTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYTagButton.m; sourceTree = "<group>"; };
 		8383BFDE1CB1523F00877ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		838F3FC21CB6875D00D888D1 /* LTYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYNavigationController.h; sourceTree = "<group>"; };
 		838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYNavigationController.m; sourceTree = "<group>"; };
@@ -605,6 +608,8 @@
 				831AAFCB1CF08E2000812462 /* LTYAddTargetTool.h */,
 				831AAFCC1CF08E2000812462 /* LTYAddTargetTool.m */,
 				831AAFCE1CF08E3700812462 /* LTYAddTargetTool.xib */,
+				837B53AA1CF9F42F00198E15 /* LTYTagButton.h */,
+				837B53AB1CF9F42F00198E15 /* LTYTagButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -883,6 +888,7 @@
 				831623A21C903BE4000AD6FA /* LTYRecommendCategoryCell.m in Sources */,
 				8310C3E31CBDF0950015E5BA /* Foundation+Log.m in Sources */,
 				832A4F411C940176002E9089 /* LTYRecommendTagCell.m in Sources */,
+				837B53AC1CF9F42F00198E15 /* LTYTagButton.m in Sources */,
 				833289591CDAF0BC00F0ACB1 /* LTYMeCell.m in Sources */,
 				833D16811CAA25010033D93E /* LTYTopicVideoView.m in Sources */,
 				8324D4781C8AA950008CEB39 /* LTYNewViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "LTYAddTargetViewController.h"
+#import "LTYTagButton.h"
 
 @interface LTYAddTargetViewController ()
 
@@ -18,7 +19,6 @@
 @property (nonatomic, weak) UITextField *textField;
 /** 标签数组 */
 @property (nonatomic, strong) NSMutableArray *tagArray;
-
 
 
 @end
@@ -37,9 +37,8 @@
 {
     if (_targetBtn == nil) {
         
-        UIButton *targetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        LTYTagButton *targetBtn = [LTYTagButton buttonWithType:UIButtonTypeCustom];
         targetBtn.width = self.contentView.width;
-        targetBtn.height = 35;
         [targetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [targetBtn addTarget:self action:@selector(addTargetBtn) forControlEvents:UIControlEventTouchUpInside];
         targetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -60,12 +59,11 @@
 - (void)addTargetBtn
 {
     //添加一个标签按钮
-    UIButton *tabButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [tabButton setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
+    LTYTagButton *tabButton = [LTYTagButton buttonWithType:UIButtonTypeCustom];
     [tabButton setTitle:self.textField.text forState:UIControlStateNormal];
-    [tabButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [tabButton setBackgroundColor:LTYTabBg];
-    [tabButton sizeToFit];
+    
+    //sizeToFit要放在设置height的前面 否则设置height后调用sizeToFit又会被算回去
+    tabButton.height = self.textField.height;
     [tabButton addTarget:self action:@selector(tagButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:tabButton];
     [self.tagArray addObject:tabButton];
@@ -87,12 +85,12 @@
     
     for (int i = 0; i < self.tagArray.count; i++) {
     
-        UIButton *tagButton = self.tagArray[i];
+        LTYTagButton *tagButton = self.tagArray[i];
         if (i == 0) { //第一个标签按钮
             tagButton.x = 0;
             tagButton.y = 0;
         } else { //其他标签按钮
-            UIButton *lastTagButton = self.tagArray[i - 1];
+            LTYTagButton *lastTagButton = self.tagArray[i - 1];
             //当前行左边的宽度
             CGFloat leftWidth = CGRectGetMaxX(lastTagButton.frame) + LTYTargetMargin;
             //计算当前行右边的宽度
@@ -110,7 +108,7 @@
     
     
     //更新textField的frame
-    UIButton *lastButton = [self.tagArray lastObject];
+    LTYTagButton *lastButton = [self.tagArray lastObject];
     CGFloat leftWidth = CGRectGetMaxX(lastButton.frame) + LTYTargetMargin;
     if (self.contentView.width - leftWidth >= [self textFieldTextWidth]) {
         self.textField.x = leftWidth;
@@ -132,7 +130,7 @@
 /*
  * 标签按钮的点击
  */
-- (void)tagButtonClick:(UIButton *)tagButton
+- (void)tagButtonClick:(LTYTagButton *)tagButton
 {
     [tagButton removeFromSuperview];
     [self.tagArray removeObject:tagButton];
@@ -142,9 +140,6 @@
     }];
     
 }
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -163,13 +158,19 @@
     textField.width = LTYScreenW;
     textField.height = 25;
     textField.placeholder = @"多个标签用逗号或者换行隔开";
+    //设置了占位文字内容以后，才能设置占位文字的颜色，这个label内部是懒加载的，有人用再会创建
+    [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
     [textField becomeFirstResponder];
+
     [self.contentView addSubview:textField];
     self.textField = textField;
     
 }
 
+/*
+ *  监听文字改变
+ */
 - (void)textDidChange
 {
     if (self.textField.hasText) { // 有文字
@@ -177,10 +178,13 @@
         self.targetBtn.hidden = NO;
         self.targetBtn.y = CGRectGetMaxY(self.textField.frame) + LTYTargetMargin;
         [self.targetBtn setTitle:[NSString stringWithFormat:@"添加标签: %@", self.textField.text] forState:UIControlStateNormal];
+        self.targetBtn.height = 35;
     } else { // 没有文字
         // 隐藏"添加标签"的按钮
         self.targetBtn.hidden = YES;
     }
+    
+    [self updateTagButtonFrame];
 }
 
 - (void)setupContentView
