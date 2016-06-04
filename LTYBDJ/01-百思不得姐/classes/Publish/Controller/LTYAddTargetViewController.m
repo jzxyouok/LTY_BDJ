@@ -9,7 +9,7 @@
 #import "LTYAddTargetViewController.h"
 #import "LTYTagButton.h"
 
-@interface LTYAddTargetViewController ()
+@interface LTYAddTargetViewController () <UITextFieldDelegate>
 
 /** 内容*/
 @property (nonatomic, weak) UIView *contentView;
@@ -25,6 +25,7 @@
 
 @implementation LTYAddTargetViewController
 
+#pragma mark - 懒加载
 - (NSMutableArray *)tagArray
 {
     if (_tagArray == nil) {
@@ -40,7 +41,7 @@
         LTYTagButton *targetBtn = [LTYTagButton buttonWithType:UIButtonTypeCustom];
         targetBtn.width = self.contentView.width;
         [targetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [targetBtn addTarget:self action:@selector(addTargetBtn) forControlEvents:UIControlEventTouchUpInside];
+        [targetBtn addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
         targetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         targetBtn.contentEdgeInsets = UIEdgeInsetsMake(0, LTYTargetMargin, 0, LTYTargetMargin);
         // 让按钮内部的文字和图片都左对齐
@@ -52,11 +53,63 @@
     }
     return _targetBtn;
 }
+#pragma mark - 初始化
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setupNav];
+    
+    [self setupContentView];
+    
+    [self setupTextFiled];
+}
+
+- (void)done
+{
+    
+}
+
+#pragma mark - 监听文字改变
+/*
+ *  监听文字改变
+ */
+- (void)textDidChange
+{
+    [self updateTagButtonFrame];
+    if (self.textField.hasText) { // 有文字
+        // 显示"添加标签"的按钮
+        self.targetBtn.hidden = NO;
+        self.targetBtn.y = CGRectGetMaxY(self.textField.frame) + LTYTargetMargin;
+        [self.targetBtn setTitle:[NSString stringWithFormat:@"添加标签: %@", self.textField.text] forState:UIControlStateNormal];
+        self.targetBtn.height = 35;
+    } else { // 没有文字
+        // 隐藏"添加标签"的按钮
+        self.targetBtn.hidden = YES;
+    }
+    
+}
+
+#pragma mark - 监听按钮点击
+/*
+ * 标签按钮的点击
+ */
+- (void)tagButtonClick:(LTYTagButton *)tagButton
+{
+    [tagButton removeFromSuperview];
+    [self.tagArray removeObject:tagButton];
+    //更新所有标签按钮的frame
+    [UIView animateWithDuration:0.25 animations:^{
+        [self updateTagButtonFrame];
+        [self updateTextFieldFrame];
+    }];
+    
+}
 
 /*
  * 添加标签按钮
  */
-- (void)addTargetBtn
+- (void)addButtonClick
 {
     //添加一个标签按钮
     LTYTagButton *tabButton = [LTYTagButton buttonWithType:UIButtonTypeCustom];
@@ -70,6 +123,7 @@
     
     //更新标签按钮的frame
     [self updateTagButtonFrame];
+    [self updateTextFieldFrame];
     
     //清空textfield文字
     self.textField.text = nil;
@@ -77,6 +131,7 @@
     
 }
 
+#pragma mark - 子控件的frame处理
 /*
  * 专门用来更新标签按钮的frame
  */
@@ -103,10 +158,11 @@
                 tagButton.y = CGRectGetMaxY(lastTagButton.frame) + LTYTargetMargin;
             }
         }
-
     }
-    
-    
+}
+
+- (void)updateTextFieldFrame
+{
     //更新textField的frame
     LTYTagButton *lastButton = [self.tagArray lastObject];
     CGFloat leftWidth = CGRectGetMaxX(lastButton.frame) + LTYTargetMargin;
@@ -127,65 +183,24 @@
     return MAX(100, testFieldWidth);
 }
 
-/*
- * 标签按钮的点击
- */
-- (void)tagButtonClick:(LTYTagButton *)tagButton
-{
-    [tagButton removeFromSuperview];
-    [self.tagArray removeObject:tagButton];
-    //更新所有标签按钮的frame
-    [UIView animateWithDuration:0.25 animations:^{
-        [self updateTagButtonFrame];
-    }];
-    
-}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [self setupNav];
-    
-    [self setupContentView];
-    
-    [self setupTextFiled];
-}
 
 - (void)setupTextFiled
 {
     UITextField *textField = [[UITextField alloc] init];
-    textField.width = LTYScreenW;
+    textField.width = self.contentView.width;
     textField.height = 25;
     textField.placeholder = @"多个标签用逗号或者换行隔开";
     //设置了占位文字内容以后，才能设置占位文字的颜色，这个label内部是懒加载的，有人用再会创建
     [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
     [textField becomeFirstResponder];
-
     [self.contentView addSubview:textField];
+    textField.delegate = self;
     self.textField = textField;
     
 }
 
-/*
- *  监听文字改变
- */
-- (void)textDidChange
-{
-    if (self.textField.hasText) { // 有文字
-        // 显示"添加标签"的按钮
-        self.targetBtn.hidden = NO;
-        self.targetBtn.y = CGRectGetMaxY(self.textField.frame) + LTYTargetMargin;
-        [self.targetBtn setTitle:[NSString stringWithFormat:@"添加标签: %@", self.textField.text] forState:UIControlStateNormal];
-        self.targetBtn.height = 35;
-    } else { // 没有文字
-        // 隐藏"添加标签"的按钮
-        self.targetBtn.hidden = YES;
-    }
-    
-    [self updateTagButtonFrame];
-}
 
 - (void)setupContentView
 {
@@ -196,7 +211,6 @@
     contentView.height = LTYScreenW;
     [self.view addSubview:contentView];
     self.contentView = contentView;
-    
 }
 
 - (void)setupNav
@@ -207,9 +221,13 @@
                                         
 }
 
-- (void)done
+#pragma mark - <UITextFieldDelegate>
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
+    if (textField.hasText) {
+        [self addButtonClick];
+    }
+    return YES;
 }
 
 
