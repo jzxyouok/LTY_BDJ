@@ -69,6 +69,7 @@
 		8383BFDF1CB1523F00877ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8383BFDE1CB1523F00877ECC /* Assets.xcassets */; };
 		838F3FC41CB6875D00D888D1 /* LTYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */; };
 		839539201CBFD6E30017D5E2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */; };
+		839946811D0335EC00F31E26 /* LTYTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 839946801D0335EC00F31E26 /* LTYTagTextField.m */; };
 		83C6039C1CE38DF400EAA38F /* LTYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6039B1CE38DF400EAA38F /* LTYSettingViewController.m */; };
 		83DF44F51C9595900079687D /* LTYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F31C9595900079687D /* LTYLoginRegisterViewController.m */; };
 		83DF44F91C95C0990079687D /* LTYVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF44F81C95C0990079687D /* LTYVerticalButton.m */; };
@@ -210,6 +211,8 @@
 		838F3FC21CB6875D00D888D1 /* LTYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYNavigationController.h; sourceTree = "<group>"; };
 		838F3FC31CB6875D00D888D1 /* LTYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYNavigationController.m; sourceTree = "<group>"; };
 		8395391F1CBFD6E30017D5E2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		8399467F1D0335EC00F31E26 /* LTYTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYTagTextField.h; sourceTree = "<group>"; };
+		839946801D0335EC00F31E26 /* LTYTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYTagTextField.m; sourceTree = "<group>"; };
 		83C6039A1CE38DF400EAA38F /* LTYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYSettingViewController.h; sourceTree = "<group>"; };
 		83C6039B1CE38DF400EAA38F /* LTYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYSettingViewController.m; sourceTree = "<group>"; };
 		83DF44F21C9595900079687D /* LTYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -610,6 +613,8 @@
 				831AAFCE1CF08E3700812462 /* LTYAddTargetTool.xib */,
 				837B53AA1CF9F42F00198E15 /* LTYTagButton.h */,
 				837B53AB1CF9F42F00198E15 /* LTYTagButton.m */,
+				8399467F1D0335EC00F31E26 /* LTYTagTextField.h */,
+				839946801D0335EC00F31E26 /* LTYTagTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -888,6 +893,7 @@
 				831623A21C903BE4000AD6FA /* LTYRecommendCategoryCell.m in Sources */,
 				8310C3E31CBDF0950015E5BA /* Foundation+Log.m in Sources */,
 				832A4F411C940176002E9089 /* LTYRecommendTagCell.m in Sources */,
+				839946811D0335EC00F31E26 /* LTYTagTextField.m in Sources */,
 				837B53AC1CF9F42F00198E15 /* LTYTagButton.m in Sources */,
 				833289591CDAF0BC00F0ACB1 /* LTYMeCell.m in Sources */,
 				833D16811CAA25010033D93E /* LTYTopicVideoView.m in Sources */,

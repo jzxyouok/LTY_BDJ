@@ -8,6 +8,7 @@
 
 #import "LTYAddTargetViewController.h"
 #import "LTYTagButton.h"
+#import "LTYTagTextField.h"
 
 @interface LTYAddTargetViewController () <UITextFieldDelegate>
 
@@ -16,10 +17,9 @@
 /** 标签按钮*/
 @property (nonatomic, weak) UIButton *targetBtn;
 /** 文本输入框*/
-@property (nonatomic, weak) UITextField *textField;
+@property (nonatomic, weak) LTYTagTextField *textField;
 /** 标签数组 */
 @property (nonatomic, strong) NSMutableArray *tagArray;
-
 
 @end
 
@@ -49,7 +49,6 @@
         targetBtn.backgroundColor = LTYTabBg;
         [self.contentView addSubview:targetBtn];
         _targetBtn = targetBtn;
-        
     }
     return _targetBtn;
 }
@@ -187,9 +186,14 @@
 
 - (void)setupTextFiled
 {
-    UITextField *textField = [[UITextField alloc] init];
+    __weak typeof(self) weakSelf = self;
+    LTYTagTextField *textField = [[LTYTagTextField alloc] init];
     textField.width = self.contentView.width;
     textField.height = 25;
+    textField.deleteBlock = ^{
+        if ([weakSelf.textField hasText]) return;
+        [weakSelf tagButtonClick:[weakSelf.tagArray lastObject]];
+    };
     textField.placeholder = @"多个标签用逗号或者换行隔开";
     //设置了占位文字内容以后，才能设置占位文字的颜色，这个label内部是懒加载的，有人用再会创建
     [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -221,8 +225,8 @@
                                         
 }
 
-#pragma mark - <UITextFieldDelegate>
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
+#pragma mark - <LTYTagTextFieldDelegate>
+- (BOOL)textFieldShouldReturn:(LTYTagTextField *)textField
 {
     if (textField.hasText) {
         [self addButtonClick];
